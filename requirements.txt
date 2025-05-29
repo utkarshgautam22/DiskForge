@@ -1,0 +1,18 @@
+# filepath: /home/utkarsh/Desktop/DiskForge/requirements.txt
+# Cross-platform dependencies
+psutil>=5.9.0
+PyQt6>=6.4.0
+click>=8.0.0    # For CLI
+colorama>=0.4.0 # Colored terminal output
+
+# Platform-specific dependencies
+# Linux
+pyudev>=0.24.0; sys_platform == 'linux'
+
+# macOS
+pyobjc>=7.3; sys_platform == 'darwin'
+
+# Windows
+pywin32>=300; sys_platform == 'win32'
+wmi>=1.5.1; sys_platform == 'win32'
+
