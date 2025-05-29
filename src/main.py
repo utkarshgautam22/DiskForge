@@ -172,33 +172,33 @@ Safety Features:
         check_permissions()
     
     # Determine interface mode
-    if args.cli or len(remaining) > 0:
-        print("🖥️  Starting CLI mode...")
-        print()
-        
-        # If there are remaining arguments, pass them to CLI
-        if remaining:
-            sys.argv = [sys.argv[0]] + remaining
-        else:
-            # Interactive CLI mode
-            sys.argv = [sys.argv[0]]
-        
-        run_cli()
+    # if args.cli or len(remaining) > 0:
+    print("🖥️  Starting CLI mode...")
+    print()
+    
+    # If there are remaining arguments, pass them to CLI
+    if remaining:
+        sys.argv = [sys.argv[0]] + remaining
     else:
-        print("🖼️  Starting GUI mode...")
-        print("   Use --cli flag for command-line interface")
-        print()
+        # Interactive CLI mode
+        sys.argv = [sys.argv[0]]
+    
+    run_cli()
+    # else:
+    #     print("🖼️  Starting GUI mode...")
+    #     print("   Use --cli flag for command-line interface")
+    #     print()
         
-        try:
-            exit_code = run_gui()
-            sys.exit(exit_code)
-        except KeyboardInterrupt:
-            print("\n👋 Goodbye!")
-            sys.exit(0)
-        except Exception as e:
-            print(f"❌ GUI Error: {e}")
-            print("\nTry CLI mode with: python -m src.main --cli")
-            sys.exit(1)
+    #     try:
+    #         exit_code = run_gui()
+    #         sys.exit(exit_code)
+    #     except KeyboardInterrupt:
+    #         print("\n👋 Goodbye!")
+    #         sys.exit(0)
+    #     except Exception as e:
+    #         print(f"❌ GUI Error: {e}")
+    #         print("\nTry CLI mode with: python -m src.main --cli")
+    #         sys.exit(1)
 
 if __name__ == "__main__":
     main()
